@@ -22,4 +22,4 @@ The UserPage consists of a list of repositories of the user and a search bar tha
 - MUI + Tailwind;
 - react-router;
 - redux-toolkit;
-- jest;
+- jest
