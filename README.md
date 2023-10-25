@@ -8,6 +8,7 @@ To run tests:
 
 
 **Description:**
+
 This web application allows you to display a list of repositories of a specific user with the option to filter by repository name.
 
 The HomePage provides the ability to enter a username in the search bar and select a specific user from the dropdown list. After clicking on a user, we are taken to the UserPage.
@@ -16,9 +17,9 @@ The UserPage consists of a list of repositories of the user and a search bar tha
 
 **Technologies Used:**
 
-create-react-app;
-typescript;
-MUI + Tailwind;
-react-router;
-redux-toolkit;
-jest;
+- create-react-app;
+- typescript;
+- MUI + Tailwind;
+- react-router;
+- redux-toolkit;
+- jest;
