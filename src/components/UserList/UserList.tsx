@@ -14,6 +14,7 @@ type Props = {
 };
 
 const UserList = ({ data, onClick, isLastItem }: Props): JSX.Element => {
+  debugger;
   return (
     <>
       <ListItem

@@ -17,7 +17,6 @@ const HomePage = (): JSX.Element => {
 
   const { isLoading, isError, data } = useSearchUsersQuery(debounced, {
     skip: debounced.length < 3,
-    refetchOnFocus: true,
   });
 
   const updateTextField = (newText: string) => {
