@@ -34,7 +34,6 @@ const UserPage = (): JSX.Element => {
       data?.filter((user) => user.name.includes(search)) || [];
     setUpdatedList(filteredList);
   }, [search, data]);
-  console.log("LOADING", isLoading);
 
   return (
     <>
