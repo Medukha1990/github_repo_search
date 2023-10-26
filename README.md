@@ -6,9 +6,10 @@ To run tests:
 ### `npm test`
 ### `npm run coverage`
 
-**Netlyfi link:**
+**Netlify link:**
 
 https://github-repo-search-m.netlify.app
+
 
 **Description:**
 
