@@ -1,5 +1,4 @@
-import React from "react";
-import { render, act, fireEvent, waitFor } from "@testing-library/react";
+import { render, fireEvent, waitFor, screen } from "@testing-library/react";
 import { useDebounce } from "../debounce";
 
 jest.useFakeTimers();
@@ -14,23 +13,19 @@ describe("useDebounce", () => {
       return <input data-testid="input" value={debouncedValue} />;
     };
 
-    const { getByTestId } = render(<Component />);
+    render(<Component />);
 
-    const inputElement = getByTestId("input");
+    const inputElement = screen.getByTestId("input");
     expect(inputElement.getAttribute("value")).toBe(value);
 
     value = "updatedValue";
-    act(() => {
-      fireEvent.input(inputElement, { target: { value } });
-    });
+    fireEvent.input(inputElement, { target: { value } });
 
     expect(inputElement.getAttribute("value")).toBe("updatedValue");
 
-    await act(async () => {
-      jest.advanceTimersByTime(delay);
-      await waitFor(() => {
-        expect(inputElement.getAttribute("value")).toBe(value);
-      });
+    jest.advanceTimersByTime(delay);
+    await waitFor(() => {
+      expect(inputElement.getAttribute("value")).toBe(value);
     });
   });
 });

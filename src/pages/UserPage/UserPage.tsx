@@ -6,7 +6,6 @@ import CircularProgress from "@mui/material/CircularProgress";
 import InputSearch from "../../components/InputSearch/InputSearch";
 import { IRepo } from "../../models/models";
 import { Box, Button } from "@mui/material";
-import { log } from "console";
 
 const UserPage = (): JSX.Element => {
   const [fetchRepos, { isLoading, data }] = useLazyGetUserReposQuery();
@@ -25,7 +24,6 @@ const UserPage = (): JSX.Element => {
   };
 
   useEffect(() => {
-    console.log("USERNAME", userName);
     if (userName) {
       fetchRepos(userName);
     }

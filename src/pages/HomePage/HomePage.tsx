@@ -1,8 +1,5 @@
 import { useEffect, useState } from "react";
-import {
-  useLazyGetUserReposQuery,
-  useSearchUsersQuery,
-} from "../../store/github/github.api";
+import { useSearchUsersQuery } from "../../store/github/github.api";
 import InputSearch from "../../components/InputSearch/InputSearch";
 import { Box, CircularProgress } from "@mui/material";
 import { useDebounce } from "../../hooks/debounce";
@@ -20,7 +17,7 @@ const HomePage = (): JSX.Element => {
 
   const { isLoading, isError, data } = useSearchUsersQuery(debounced, {
     skip: debounced.length < 3,
-    // refetchOnFocus: true,
+    refetchOnFocus: true,
   });
 
   const updateTextField = (newText: string) => {
